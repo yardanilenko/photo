@@ -1,5 +1,5 @@
 const React = require('react');
-const Navbar = require('../views/Navbar');
+const Navbar = require('../components/Navbar');
 
 function Layout({title, children}) {
   return (
