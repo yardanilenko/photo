@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn+SC&display=swap');
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+ /* Модальное окно входа */
+ .modalEntry {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content-entry {
+  background-color: #f0f7ff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close-entry {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-entry:hover,
+.close-entry:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Модальное окно регистрации */
+.modalReg {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content-reg {
+  background-color: #f0f7ff;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+    border-radius: 10px;
+}
+
+/* The Close Button */
+.close-reg {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-reg:hover,
+.close-reg:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.inputform{
+  width:100%;
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border:0;
+  box-shadow:4px 4px 10px;
+  margin-bottom: 35px;
+}
+
+.modal-content-reg{
+
+}
+
+.titleformmodal{
+  margin-bottom: 60px;
+  text-align: center;
+  color: #0c1b30;
+  font-family:arial;
+  font-size: 38px;
+  font-family: 'Vollkorn SC', serif;
+}
+
+.label{
+  font-family: 'Vollkorn SC', serif;
+}
+
+.buttonsOnMain{
+  display: flex;
+  justify-content: center;
+}
+#entryButton{
+  margin-right: 20px;
+}
+#registrationButton{
+  margin-left: 20px;
+}
