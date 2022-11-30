@@ -27,11 +27,18 @@
     "pg-hstore": "^2.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hooks": "^1.0.1",
     "sequelize": "^6.25.8",
     "session-file-store": "^1.5.0",
     "ws": "^8.11.0"
   },
   "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.5.2"
   }
