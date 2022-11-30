@@ -14,10 +14,10 @@ function Navbar({userName}) {
                         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div className="navbar-nav">
                                 <a className="nav-link" aria-current="page"
-                                   href="/Users/olity/projects/phase_2/week3/photo/routes">Главная</a>
+                                   href="/">Главная</a>
                                 <a className="nav-link" aria-current="page"
                                    href="/profile">{userName || 'Olity'}</a>
-                                <a className="nav-link" href="/Users/olity/projects/phase_2/week3/photo/routes">Добавить
+                                <a className="nav-link" href="/upload">Добавить
                                     фото</a>
                                 <a className="nav-link"
                                    href="/Users/olity/projects/phase_2/week3/photo/routes">Выйти</a>

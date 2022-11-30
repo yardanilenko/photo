@@ -1,6 +1,7 @@
 const React = require('react');
-const Navbar = require('../views/Navbar');
-const NewAlbum = require('./NewAlbum');
+
+const Navbar = require('../components/Navbar');
+
 
 function Layout({title, children}) {
   return (
@@ -27,7 +28,6 @@ function Layout({title, children}) {
       <body>
       <Navbar/>
         <div className='container'>{children}</div>
-      <NewAlbum/>
       </body>
     </html>
   );
