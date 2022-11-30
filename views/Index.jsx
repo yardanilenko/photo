@@ -1,12 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
+const PhotoCarousel = require('../components/PhotoCarousel');
 
-function Index({title}) {
+function Index({}) {
   return (
     <Layout>
-      <div>
-        <h2>{title}</h2>
-      </div>
+      <PhotoCarousel/>
     </Layout>
   );
 }
