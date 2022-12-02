@@ -9,7 +9,10 @@ route.get('/upload', async (req, res) => {
     // const { user } = req.session;
     // TODO get all albums => to template and render select album options
     const albums = await Album.findAll({
-        attributes: ['name', 'id']
+        attributes: ['name', 'id'],
+        where: {
+            user_id: req.session.userID
+        },
     })
     render(UploadPhoto, {albums}, res)
 })

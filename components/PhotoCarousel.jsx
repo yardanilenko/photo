@@ -5,7 +5,6 @@ function PhotoCarousel({userName, albums, isHideOwners}) {
     return (
         <div className="carouselContainer container">
             <script defer src="/js/carousel.js"/>
-            <p>{JSON.stringify(albums)}</p>
             <section className="splide" aria-label="Splide Basic HTML Example">
                 <div className="splide__track">
                     <ul className="splide__list">
