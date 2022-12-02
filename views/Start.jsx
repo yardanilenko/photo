@@ -3,15 +3,15 @@ const Layout = require('./Layout');
 const Modalentry = require('./Modalentry')
 const Modalreg = require('./Modalreg')
 
-function Index({title}) {
+function Start({currentUser}) {
+  console.log({currentUser})
   return (
-    <Layout>
+    <Layout currentUser={currentUser} >
       <div>
-        <h2>{title}</h2>
       </div>
       <div className="buttonsOnMain">
-        <button id="entryButton" class="btn btn-primary btn-lg" >Вход</button>
-        <button id="registrationButton" class="btn btn-primary btn-lg">Регистрация</button>
+        <button id="entryButton" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Вход</button>
+        <button id="registrationButton" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdropReg">Регистрация</button>
       </div>
        <Modalentry/>
        <Modalreg/>
@@ -19,4 +19,4 @@ function Index({title}) {
   );
 }
 
-module.exports = Index;
+module.exports = Start;
