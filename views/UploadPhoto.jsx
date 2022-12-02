@@ -2,7 +2,7 @@ const React = require('react');
 const Layout = require('./Layout');
 const NewAlbum = require('./NewAlbum')
 
-function UploadPhoto({nameCurrentUser}) {
+function UploadPhoto({nameCurrentUser, albums}) {
     return (
         <Layout nameCurrentUser={nameCurrentUser}>
             <script defer src="/js/upload.js"/>
@@ -16,7 +16,7 @@ function UploadPhoto({nameCurrentUser}) {
                             data-bs-toggle="modal"
                             data-bs-target="#newAlbumModal">Продолжить
                     </button>
-                    <NewAlbum/>
+                    <NewAlbum albums={albums}/>
                 </form>
             </div>
         </Layout>

@@ -1,6 +1,6 @@
 const React = require('react');
 
-function NewAlbum() {
+function NewAlbum({albums}) {
     return (
         <div className="modal fade" id="newAlbumModal" tabIndex="-1" aria-labelledby="newAlbumModalLabel"
              aria-hidden="true">
@@ -23,9 +23,10 @@ function NewAlbum() {
 
                     <div className="choose-album-container">
                         <select name="albumId" className="form-select" aria-label="Default select example">
-                            {/*TODO: albums from DB*/}
                             <option value={null} selected>Выберите альбом</option>
-                            <option value={1}>One</option>
+                            {albums && albums.length && albums.map(el => (
+                                <option value={el.id}>{el.name}</option>
+                            ))}
                         </select>
                     </div>
 
