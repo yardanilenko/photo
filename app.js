@@ -39,13 +39,13 @@ const indexRoutes = require('./routes/indexRoutes');
 const profileRoutes = require('./routes/profileRoutes')
 const startRoutes = require('./routes/startRoutes')
 
-const profileRoutes = require('./routes/profileRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 const apiUploadRoutes = require('./routes/apiUploadRoutes');
 const personAlbumRoutes = require('./routes/personAlbumRoutes');
 const apiUsersRoutes = require('./routes/apiUsersRoutes');
 const apiAlbumsRoutes = require('./routes/apiAlbumsRoutes');
-
+const userCreatedRoutes = require('./routes/userCreatedRoutes')
+const wrongDataRoutes = require('./routes/wrongDataRoutes')
 // вызов функции проверки соединения с базоый данных
 dbCheck();
 
@@ -57,6 +57,9 @@ app.use(express.json());
 // роутеры
 app.use('/', indexRoutes);
 app.use('/', profileRoutes);
+app.use('/usercreated', userCreatedRoutes);
+app.use('/wrongdata', wrongDataRoutes);
+
 
 app.use('/start', startRoutes);
 app.get('/logout', async (req, res) => {

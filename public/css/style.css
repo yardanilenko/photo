@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sarpanch:900');
 body {
     background-color: #f5f4ff;
     font-family: adelle-sans, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
@@ -302,3 +304,18 @@ form {
 .hidden {
     display: none;
 }
+
+.buttonsOnMain{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.startH1{
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Black Han Sans', sans-serif;
+    color: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+};
