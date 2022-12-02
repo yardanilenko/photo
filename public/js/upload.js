@@ -5,6 +5,7 @@ const createNewAlbumCheckbox = document.querySelector('#checkNewAlbum');
 const label = document.querySelector(".file_input+label")
 const submitButton = document.querySelector("#submitButton")
 const albumTypeRadio = document.querySelectorAll('[name="albumType"]')
+const addUserAccessButton = document.querySelector('#addUserAccessButton')
 let fholoList = [];
 
 albumTypeRadio.forEach((radio) => {
@@ -50,16 +51,26 @@ filesToUpload.addEventListener('change', (event) => {
 form.addEventListener('submit', function (evt) {
     evt.preventDefault();
     const previewIndex = document.querySelector('.checkbox-preview:checked')?.value || null;
-    // TODO submit from modal
-    // TODO get album id from select or new album: albumId
-    handleSubmit(fholoList, {
-        previewIndex,
-        albumId: evt.target.albumId.value,
-    })
+    const albumType = document.querySelector('[name="albumType"]:checked')?.value;
+    if (albumType === 'exist') {
+        handleSubmitUpload(fholoList, {
+            previewIndex,
+            albumId: evt.target.albumId.value,
+        })
+    } else {
+        handleSubmitCreateAlbum().then((response) => {
+            response.json().then((data) => {
+                handleSubmitUpload(fholoList, {
+                    previewIndex,
+                    albumId: data.id,
+                })
+            })
+        })
+    }
 
 })
 
-function handleSubmit(acceptedFiles, {
+function handleSubmitUpload(acceptedFiles, {
     previewIndex,
     albumId,
 }) {
@@ -70,7 +81,6 @@ function handleSubmit(acceptedFiles, {
     }
     if (previewIndex) data.append('previewIndex', previewIndex);
     if (albumId) data.append('albumId', albumId);
-
 
     return fetch('/api/upload', {
         method: 'POST',
@@ -86,3 +96,61 @@ function handleSubmit(acceptedFiles, {
         console.log(error);
     });
 }
+
+if (addUserAccessButton) {
+    addUserAccessButton.addEventListener('click', async (event) => {
+        event.preventDefault();
+        document.querySelector("#errorsUserSearchContainer").innerHTML = "";
+        const userAccessInput = document.querySelector('#userAccessSearch');
+        const userAccessList = document.querySelector('#userAccessList');
+        const userName = userAccessInput.value;
+        await fetch(`/api/users/${userName}`).then(
+            (response) => {
+                if (response.ok) {
+                    response.json().then((data) => {
+                        const template = `
+                        <li class="list-group-item">
+                            ${userName}
+                            <input type="hidden" name="usersId" value="${data.userId}">
+                        </li>
+                    `;
+                        userAccessList.innerHTML += template;
+                        userAccessInput.value = '';
+                    }).catch((error) => {
+                        document.querySelector("#errorsUserSearchContainer").innerHTML = `<p class="text-danger">ServerError</p>`
+                    })
+                } else {
+                    // TODO: route for fetch
+                    document.querySelector("#errorsUserSearchContainer").innerHTML = `<p class="text-danger">User not found</p>`
+                }
+            }
+        )
+    })
+}
+
+async function handleSubmitCreateAlbum() {
+    const albumName = document.querySelector('[name="albumName"]')?.value;
+    const isPublic = document.querySelector('#checkboxAccess')?.checked ? true : false;
+    const userInputs = document.querySelectorAll('[name="usersId"]');
+    const usersId = userInputs.length ? Array.from(userInputs).map((el) => el.value) : null;
+    return await fetch('/api/albums', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            albumName,
+            isPublic,
+            usersId,
+        })
+    });
+}
+
+document.querySelector('#checkboxAccess').addEventListener('change', (event) => {
+    if (!event.target.checked) {
+        document.querySelector('.user-access-container').classList.remove('hidden');
+    } else {
+        document.querySelector('.user-access-container').classList.add('hidden');
+        document.querySelector('#userAccessList').innerHTML = '';
+    }
+})

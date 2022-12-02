@@ -17,14 +17,14 @@ function NewAlbum() {
                                id="checkNewAlbum"
                         />
                         <label className="form-check-label" htmlFor="checkNewAlbum">
-                            Создать новый альюом
+                            Создать новый альбом
                         </label>
                     </div>
 
                     <div className="choose-album-container">
                         <select name="albumId" className="form-select" aria-label="Default select example">
                             {/*TODO: albums from DB*/}
-                            <option selected>Выберите альбом</option>
+                            <option value={null} selected>Выберите альбом</option>
                             <option value={1}>One</option>
                         </select>
                     </div>
@@ -34,20 +34,27 @@ function NewAlbum() {
                             <div className="mb-3">
                                 <label htmlFor="exampleFormControlInput1" className="form-label">Название
                                     альбома</label>
-                                <input type="text" className="form-control" id="exampleFormControlInput1"/>
+                                <input type="text" name="albumName" className="form-control"
+                                       id="exampleFormControlInput1"/>
                             </div>
                             <div className="form-check">
-                                <input className="form-check-input" type="radio" name="checkboxAccess"
+                                <input className="form-check-input" type="checkbox" name="isPublic"
                                        id="checkboxAccess"/>
                                 <label className="form-check-label" htmlFor="checkboxAccess">Public access
                                 </label>
                             </div>
                         </div>
-                        <div className="input-group mb-3">
-                            <input type="text" className="form-control" placeholder="Enter username"
-                                   aria-label="Enter username" aria-describedby="button-addon2"/>
-                            <button className="btn btn-outline-secondary" type="button" id="button-addon2">Выбрать
-                            </button>
+                        <div className={"user-access-container"}>
+                            <div className="input-group mb-3">
+                                <input id="userAccessSearch" type="text" className="form-control"
+                                       placeholder="Enter username"
+                                       aria-label="Enter username" aria-describedby="button-addon2"/>
+                                <button className="btn btn-outline-secondary" type="button"
+                                        id="addUserAccessButton">Выбрать
+                                </button>
+                            </div>
+                            <div id="errorsUserSearchContainer"></div>
+                            <ul id="userAccessList"></ul>
                         </div>
                     </div>
 

@@ -14,6 +14,8 @@ const indexRoutes = require('./routes/indexRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 const apiUploadRoutes = require('./routes/apiUploadRoutes');
+const personAlbumRoutes = require('./routes/personAlbumRoutes');
+const apiUsersRoutes = require('./routes/apiUsersRoutes');
 
 // вызов функции проверки соединения с базоый данных
 dbCheck();
@@ -28,6 +30,8 @@ app.use('/', indexRoutes);
 app.use('/', profileRoutes);
 app.use('/', uploadRoutes);
 app.use('/', apiUploadRoutes);
+app.use('/', personAlbumRoutes);
+app.use('/', apiUsersRoutes);
 
 const PORT = process.env.PORT || 3100;
 app.listen(PORT, (err) => {
