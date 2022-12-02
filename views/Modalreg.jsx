@@ -1,20 +1,32 @@
 const React = require('react');
 const Modalreg = ({}) => {
     return(
-<div id="myModalReg" class="modalReg">
-
-<div class="modal-content-reg">
-  <span class="close-reg">&times;</span>
-<p class ="titleformmodal">Регистрация</p>
-<label for="nameInputReg" className="label">Имя пользователя</label>
-  <input class ="inputform" id = "nameInputReg" placeholder="bibaboba@gmail.com"></input>
-  <label for="nameInputReg" className="label">Пароль</label>
-  <input class ="inputform" id = "passwordInputReg" placeholder="***************"></input>
-
-  <button class="btn btn-success">Зарегистрироваться</button>
+      <div class="modal fade" id="staticBackdropReg" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <form action="/start/register" method="POST" id="regForm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Регистрация</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+          <div class="input-group input-group-sm mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Логин</span>
+    <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
+  </div>
+  <div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Пароль</span>
+  <input type="text" name="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"></input>
 </div>
-
-</div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть окно</button>
+            <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
     )
 }
 

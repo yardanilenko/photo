@@ -2,8 +2,7 @@ const React = require('react');
 
 const Navbar = require('../components/Navbar');
 
-
-function Layout({title, children}) {
+function Layout({title, children, nameCurrentUser }) {
   return (
     <html lang='en'>
       <head>
@@ -26,7 +25,8 @@ function Layout({title, children}) {
 
       </head>
       <body>
-      <Navbar/>
+       {nameCurrentUser && <Navbar nameCurrentUser = {nameCurrentUser}/>}
+       <h2>{nameCurrentUser}</h2>
         <div className='container'>{children}</div>
       </body>
     </html>
