@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer')
 const upload = multer({dest: 'uploads/'});
-const {Photo, Album} = require('../db/models/indexmodels');
+const {Photo, Album} = require('../db/models/index');
 
 
 const route = express.Router();
@@ -25,7 +25,6 @@ route.post('/api/upload', upload.array('photos', 100), async (req, res, next) =>
             storage_file_name: file.filename,
             album_id: req.body.albumId
         })));
-        console.log("photos", photos)
         if (previewImageDB) {
             await Album.update({preview_id: previewImageDB.id}, {where: {id: req.body.albumId}});
         } else {

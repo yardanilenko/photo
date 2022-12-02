@@ -1,6 +1,6 @@
 const express = require('express');
 const route = express.Router();
-const {User} = require('../db/models/indexmodels');
+const {User} = require('../db/models/index');
 
 route.get('/api/users/:name', async (req, res) => {
     const {name} = req.params;

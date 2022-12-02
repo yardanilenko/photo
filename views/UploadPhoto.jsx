@@ -2,9 +2,9 @@ const React = require('react');
 const Layout = require('./Layout');
 const NewAlbum = require('./NewAlbum')
 
-function UploadPhoto({}) {
+function UploadPhoto({nameCurrentUser}) {
     return (
-        <Layout>
+        <Layout nameCurrentUser={nameCurrentUser}>
             <script defer src="/js/upload.js"/>
             <div className="container carouselContainer">
                 <form id="uploadForm">

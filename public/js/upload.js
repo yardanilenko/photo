@@ -86,9 +86,9 @@ function handleSubmitUpload(acceptedFiles, {
         method: 'POST',
         body: data,
     }).then((response) => {
-        console.log(response)
         if (response.ok) {
-            // window.location.href = '/profile'
+            console.log("response.ok", response.ok)
+             window.location.href = '/profile'
         } else {
             console.log('Error');
         }

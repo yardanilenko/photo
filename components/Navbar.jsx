@@ -3,7 +3,7 @@ const React = require('react');
 function Navbar({nameCurrentUser}) {
     return (
         <div className="headerStyle">
-<div className="container">
+            <div className="container">
                 <nav className="navbar navbar-expand-lg navbarContainer">
                     <div className="container-fluid">
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -16,18 +16,16 @@ function Navbar({nameCurrentUser}) {
                                 <a className="nav-link" aria-current="page"
                                    href="/">Главная</a>
                                 <a className="nav-link" aria-current="page"
-                                   href="/profile">{nameCurrentUser || 'Olity'}</a>
+                                   href="/profile">{nameCurrentUser}</a>
                                 <a className="nav-link" href="/upload">Добавить
-
-
                                     фото</a>
                                 <a className="nav-link"
-                                   href="/logout">Выйти</a>ge
+                                   href="/logout">Выйти</a>
                             </div>
                         </div>
                     </div>
                 </nav>
-            </div> 
+            </div>
         </div>
     )
 }

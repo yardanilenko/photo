@@ -36,7 +36,6 @@ const dbCheck = require('./db/dbCheck');
 // импорт роутов
 const indexRoutes = require('./routes/indexRoutes');
 
-const profileRoutes = require('./routes/profileRoutes')
 const startRoutes = require('./routes/startRoutes')
 
 const profileRoutes = require('./routes/profileRoutes');
@@ -56,7 +55,6 @@ app.use(express.json());
 
 // роутеры
 app.use('/', indexRoutes);
-app.use('/', profileRoutes);
 
 app.use('/start', startRoutes);
 app.get('/logout', async (req, res) => {
@@ -86,6 +84,7 @@ app.use('/', apiUploadRoutes);
 app.use('/', personAlbumRoutes);
 app.use('/', apiUsersRoutes);
 app.use('/', apiAlbumsRoutes);
+app.use('/', profileRoutes);
 
 const PORT = process.env.PORT || 3100;
 app.listen(PORT, (err) => {

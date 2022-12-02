@@ -22,12 +22,13 @@ const renderStart = (req, res) => {
       const hash = await bcrypt.hash(password, 10);
       const nameUser = await User.create({ name: name, password: hash });
       req.session.nameCurrentUser = nameUser.name;
+        req.session.userID = nameUser.id;
       req.session.save(() => {
         res.redirect('/profile');  // * переход после регистрации 
       });
     } catch (error) {
-      console.log("ИМЯ ОШИБКИ", error.name) //*SequelizeUniqueConstraintError
-      // res.send(`Error ------> reg ${error}`);
+      console.log("error", error)
+      res.send({error});
     }
   };
 
@@ -39,6 +40,7 @@ const renderStart = (req, res) => {
       const passCheck = await bcrypt.compare(password, user.password);
       if (passCheck) {
         req.session.nameCurrentUser = user.name;
+        req.session.userID = user.id;
         req.session.save(() => {
           res.redirect('/profile');
         });
