@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Photo, {foreignKey: 'album_id' })
       this.belongsTo(models.User, {foreignKey: 'user_id'})
       this.hasMany(models.Access, {foreignKey: 'album_id' })
-      this.hasOne(models.Photo, {foreignKey: 'preview_id' })
+      // this.hasOne(models.Photo, {foreignKey: 'preview_id' })
     }
   }
   Album.init({
