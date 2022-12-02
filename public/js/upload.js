@@ -62,7 +62,7 @@ form.addEventListener('submit', function (evt) {
             response.json().then((data) => {
                 handleSubmitUpload(fholoList, {
                     previewIndex,
-                    albumId: data.id,
+                    albumId: data.albumID,
                 })
             })
         })
@@ -88,7 +88,7 @@ function handleSubmitUpload(acceptedFiles, {
     }).then((response) => {
         console.log(response)
         if (response.ok) {
-            window.location.href = '/profile'
+            // window.location.href = '/profile'
         } else {
             console.log('Error');
         }
