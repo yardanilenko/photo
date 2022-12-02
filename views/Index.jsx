@@ -5,7 +5,7 @@ const PhotoCarousel = require('../components/PhotoCarousel');
 function Index({}) {
   return (
     <Layout>
-      <PhotoCarousel/>
+      <PhotoCarousel />
     </Layout>
   );
 }

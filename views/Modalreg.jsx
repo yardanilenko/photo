@@ -1,21 +1,22 @@
 const React = require('react');
-const Modalreg = ({}) => {
-    return(
-<div id="myModalReg" class="modalReg">
 
-<div class="modal-content-reg">
-  <span class="close-reg">&times;</span>
-<p class ="titleformmodal">Регистрация</p>
-<label for="nameInputReg" className="label">Имя пользователя</label>
-  <input class ="inputform" id = "nameInputReg" placeholder="bibaboba@gmail.com"></input>
-  <label for="nameInputReg" className="label">Пароль</label>
-  <input class ="inputform" id = "passwordInputReg" placeholder="***************"></input>
+function Modalreg({}) {
+  return (
+    <div id="myModalReg" className="modalReg">
 
-  <button class="btn btn-success">Зарегистрироваться</button>
-</div>
+      <div className="modal-content-reg">
+        <span className="close-reg">&times;</span>
+        <p className="titleformmodal">Регистрация</p>
+        <label htmlFor="nameInputReg" className="label">Имя пользователя</label>
+        <input className="inputform" id="nameInputReg" placeholder="bibaboba@gmail.com" />
+        <label htmlFor="nameInputReg" className="label">Пароль</label>
+        <input className="inputform" id="passwordInputReg" placeholder="***************" />
 
-</div>
-    )
+        <button className="btn btn-success">Зарегистрироваться</button>
+      </div>
+
+    </div>
+  );
 }
 
 module.exports = Modalreg;

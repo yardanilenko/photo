@@ -3,10 +3,10 @@ const express = require('express');
 const route = express.Router();
 
 const render = require('../lib/render');
-const Profile = require('../views/Profile');
+const Foto = require('../views/Foto');
 
-route.get('/profile', (req, res) => {
-  render(Profile, { isHideOwners: true }, res);
+route.get('/foto', (req, res) => {
+  render(Foto, { isHideOwners: true }, res);
 });
 
 module.exports = route;
