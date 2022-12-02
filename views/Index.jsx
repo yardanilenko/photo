@@ -2,10 +2,10 @@ const React = require('react');
 const Layout = require('./Layout');
 const PhotoCarousel = require('../components/PhotoCarousel');
 
-function Index({}) {
+function Index({nameCurrentUser,albums}) {
   return (
-    <Layout>
-      <PhotoCarousel/>
+    <Layout nameCurrentUser={nameCurrentUser}>
+      <PhotoCarousel albums={albums}/>
     </Layout>
   );
 }
