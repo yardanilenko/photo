@@ -13,6 +13,7 @@ const dbCheck = require('./db/dbCheck');
 const indexRoutes = require('./routes/indexRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
+const apiUploadRoutes = require('./routes/apiUploadRoutes');
 
 // вызов функции проверки соединения с базоый данных
 dbCheck();
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use('/', indexRoutes);
 app.use('/', profileRoutes);
 app.use('/', uploadRoutes);
+app.use('/', apiUploadRoutes);
 
 const PORT = process.env.PORT || 3100;
 app.listen(PORT, (err) => {
